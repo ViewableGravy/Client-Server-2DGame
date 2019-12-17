@@ -5,15 +5,9 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.IO;
-using System.Threading;
 
 namespace _2DGameServer
 {
-
-    class TimerState
-    {
-        public Timer Timer;
-    }
 
     class Program
     {
@@ -26,7 +20,6 @@ namespace _2DGameServer
         static void Main(string[] args)
         {
 
-
             Program program = new Program();
 
             logic = new GameLogic(ref program.requests);
@@ -36,7 +29,7 @@ namespace _2DGameServer
             onlineUsers.Add(new Player("ViewableGravy", null));
 
             const int MILLIS = 5000;
-            //continue program
+            //Update server every MILLIS
             while (true) 
             {
                 Console.WriteLine("Executing Game logic after {0} milliseconds", MILLIS);
