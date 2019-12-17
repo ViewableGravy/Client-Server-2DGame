@@ -4,3 +4,9 @@ E:\desktop\Coding\GitHub\2DGameRevisited\2DGameServer\2DGameServer\bin\Debug\2DG
 E:\desktop\Coding\GitHub\2DGameRevisited\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csprojAssemblyReference.cache
 E:\desktop\Coding\GitHub\2DGameRevisited\2DGameServer\2DGameServer\obj\Debug\2DGameServer.exe
 E:\desktop\Coding\GitHub\2DGameRevisited\2DGameServer\2DGameServer\obj\Debug\2DGameServer.pdb
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.exe.config
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.exe
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.pdb
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csprojAssemblyReference.cache
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.exe
+E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.pdb

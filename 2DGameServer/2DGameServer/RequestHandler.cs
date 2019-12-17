@@ -8,10 +8,9 @@ namespace _2DGameServer
 {
     public static class RequestHandler
     {
-
         public static void HandleRequest(string request)
         {
-            Console.WriteLine("Executing Request: " + request);
+            Console.WriteLine(request);
         }
     }
 }
