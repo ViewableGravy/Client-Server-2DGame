@@ -10,9 +10,7 @@ namespace _2DGameServer
 
     public class Request
     {
-        public string username;
         public int ID;
         public List<character> keypresses;
-
     }
 }
