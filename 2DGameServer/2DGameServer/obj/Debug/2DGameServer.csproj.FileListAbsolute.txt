@@ -10,3 +10,10 @@ E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debu
 E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csprojAssemblyReference.cache
 E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.exe
 E:\desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.exe.config
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csprojAssemblyReference.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csproj.CoreCompileInputs.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.pdb

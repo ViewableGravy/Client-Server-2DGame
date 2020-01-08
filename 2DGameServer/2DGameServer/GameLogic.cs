@@ -9,10 +9,12 @@ namespace _2DGameServer
     class GameLogic
     {
         Queue<string> requests;
+        RequestHandler requestHandler;
 
-        public GameLogic(ref Queue<string> requests)
+        public GameLogic(ref Queue<string> requests, ref World world)
         {
             this.requests = requests;
+            requestHandler = new RequestHandler(ref world);
         }
 
         public void execute() 
@@ -24,7 +26,7 @@ namespace _2DGameServer
             {
                 //Console.WriteLine("requests in queue: " + requests.Count());
                 string request = requests.Dequeue();
-                //RequestHandler.HandleRequest(request);
+                requestHandler.HandleRequest(request);
                 ReponseHandler.UpdateClient("ViewableGravy");
             }
         }
