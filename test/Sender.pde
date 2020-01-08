@@ -42,20 +42,29 @@ class Sender implements Runnable {
 
 public static String GenerateRequest(Packet currentPacket, ArrayList<Packet> sentPackets) {
 
-  sentPackets.add(currentPacket);
-  
+  //maybe store these locally as JSONObjects since they probably don't need to be used for anything else
   JSONObject credentials = new JSONObject() {
     {
       setString("username", username);
-      setInt("sessionToken", SessionToken);
+      setString("sessionToken", SessionToken);
     }
   };  
 
   JSONArray requests = new JSONArray();
   for (int j = 0; j < sentPackets.size(); j++) {
-    Packet pkt = sentPackets.get(j);
+    requests.setJSONObject(j, ConstructRequest(sentPackets.get(j)));
+  }
+  requests.setJSONObject(sentPackets.size(), ConstructRequest(currentPacket));
 
-    JSONObject internalPacket = new JSONObject();
+  JSONObject packet = new JSONObject();
+  packet.setJSONObject("credentials", credentials);
+  packet.setJSONArray("requests", requests);
+
+  return packet.toString();
+}
+
+public static JSONObject ConstructRequest(Packet pkt) {
+  JSONObject internalPacket = new JSONObject();
     internalPacket.setInt("ID", pkt.ID);
 
     JSONArray keys = new JSONArray();
@@ -63,16 +72,10 @@ public static String GenerateRequest(Packet currentPacket, ArrayList<Packet> sen
       JSONObject KEY = new JSONObject();
       KEY.setString("value", String.valueOf(pkt.keyPresses.get(i)));
       keys.setJSONObject(i, KEY);
+      
     }
     internalPacket.setJSONArray("keypresses", keys);
-    requests.setJSONObject(j, internalPacket);
-  }
-
-  JSONObject packet = new JSONObject();
-  packet.setJSONObject("credentials", credentials);
-  packet.setJSONArray("requests", requests);
-
-  return packet.toString();
+    return internalPacket;
 }
 
 public static void ServerUpdate(String request) throws IOException {

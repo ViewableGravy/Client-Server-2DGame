@@ -29,8 +29,14 @@ namespace _2DGameServer
                 //recieved an invalid request
                 Console.WriteLine("Invalid request. Construction of userRequest failed: " + e);
             }
-
-            if (world.LoggedIn(userRequest.credentials))
+            
+            if (world.ValidateUser(userRequest.credentials))
+            {
+                Console.WriteLine("Logged in");
+            } else
+            {
+                Console.WriteLine("Not Logged in");
+            }
 
             foreach(Request request in userRequest.requests)
             {

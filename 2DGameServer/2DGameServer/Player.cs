@@ -9,14 +9,20 @@ namespace _2DGameServer
 {
     class Player
     {
-        public UserDetails details;
-        public IPAddress iPAddress;
-        public Guid guid;
+        public readonly SessionCredentials credentials;
+        public readonly IPAddress iPAddress;
 
-        public Player(UserDetails details, IPAddress iPAddress)
+        /// <summary>
+        /// Takes an IPAddress and Credentials for a client to modify this player. these should be established during
+        /// the TCP login process and passed when creating a player.
+        /// </summary>
+        /// <param name="credentials"></param>
+        /// <param name="iPAddress"></param>
+        public Player(SessionCredentials credentials, IPAddress iPAddress)
         {
-            this.details = details;
+            this.credentials = credentials;
             this.iPAddress = iPAddress;
         }
+
     }
 }

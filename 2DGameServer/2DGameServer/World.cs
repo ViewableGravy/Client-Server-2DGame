@@ -33,7 +33,7 @@ namespace _2DGameServer
             world.listener = new UDPListener(ref world.requests);
             world.listener.StartListener();
 
-            world.onlineUsers.Add(new Player("ViewableGravy", null));
+            world.onlineUsers.Add(new Player(new SessionCredentials("7c9e6679-7425-40de-944b-e07fc1f90ae7", "ViewableGravy", "Test"), null));
 
             const int MILLIS = 5000;
             //Update server every MILLIS
@@ -50,10 +50,13 @@ namespace _2DGameServer
             
         }
 
-        public bool LoggedIn(Credentials credentials)
+        public bool ValidateUser(SessionCredentials credentials)
         {
-
-
+            foreach (Player plr in onlineUsers)
+            {
+                if (plr.credentials.username == credentials.username)
+                    return plr.credentials.SessionToken == credentials.SessionToken;
+            }
             return false;
         }
 

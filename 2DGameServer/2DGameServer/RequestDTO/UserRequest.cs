@@ -8,7 +8,7 @@ namespace _2DGameServer
 {
     public class UserRequest
     {
-        public SessionCredentials details;
+        public SessionCredentials credentials;
         public List<Request> requests;
     }
 }

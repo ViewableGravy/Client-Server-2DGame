@@ -2,13 +2,12 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.Scanner;
 
 Thread sendingThread = new Thread();
 ArrayList<Character> inputs = new ArrayList<Character>();
 //temp credentials
 static String username = "ViewableGravy";
-static int SessionToken = 123456;
+static String SessionToken = "7c9e6679-7425-40de-944b-e07fc1f90ae7";
 
 void setup() {
 
