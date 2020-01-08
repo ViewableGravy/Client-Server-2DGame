@@ -27,7 +27,9 @@ namespace _2DGameServer
                 //Console.WriteLine("requests in queue: " + requests.Count());
                 string request = requests.Dequeue();
                 requestHandler.HandleRequest(request);
-                ReponseHandler.UpdateClient("ViewableGravy");
+
+
+                //ReponseHandler.UpdateClient("ViewableGravy");
             }
         }
     }

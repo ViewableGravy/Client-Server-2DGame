@@ -7,7 +7,7 @@ using System.Net;
 
 namespace _2DGameServer
 {
-    class Player
+    public class Player
     {
         public readonly SessionCredentials credentials;
         public readonly IPAddress iPAddress;

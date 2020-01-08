@@ -45,9 +45,12 @@ namespace _2DGameServer
             }
         }
 
-        public void ApplyRequest()
+        public Player GetPlayer(string username)
         {
-            
+            foreach(Player plr in onlineUsers)
+                if (plr.credentials.username == username)
+                    return plr;
+            return null;
         }
 
         public bool ValidateUser(SessionCredentials credentials)

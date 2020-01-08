@@ -29,21 +29,17 @@ namespace _2DGameServer
                 //recieved an invalid request
                 Console.WriteLine("Invalid request. Construction of userRequest failed: " + e);
             }
-            
-            if (world.ValidateUser(userRequest.credentials))
-            {
-                Console.WriteLine("Logged in");
-            } else
-            {
-                Console.WriteLine("Not Logged in");
-            }
 
-            foreach(Request request in userRequest.requests)
+            if (world.ValidateUser(userRequest.credentials))
+                foreach (Request request in userRequest.requests)
+                    //world.eventHandler.ApplyRequest(request, userRequest.credentials.username);
+                    Console.WriteLine("ApplyRequest: {0}", request.ID);
+            else
             {
-                Console.WriteLine(request.ID);
-                //world.ApplyRequest(request);
+                Console.WriteLine("Queueing (Invalid credentials) Log out request to client");
+                //world.responseHandler.QueueLogout(); ???
             }
-        }
+            
 
     }
 }
