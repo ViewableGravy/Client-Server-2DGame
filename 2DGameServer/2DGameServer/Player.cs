@@ -9,12 +9,13 @@ namespace _2DGameServer
 {
     class Player
     {
-        public string username;
+        public UserDetails details;
         public IPAddress iPAddress;
+        public Guid guid;
 
-        public Player(string username, IPAddress iPAddress)
+        public Player(UserDetails details, IPAddress iPAddress)
         {
-            this.username = username;
+            this.details = details;
             this.iPAddress = iPAddress;
         }
     }

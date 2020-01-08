@@ -19,9 +19,18 @@ namespace _2DGameServer
 
         public void HandleRequest(string packets)
         {
-            UserRequest userRequest = new JavaScriptSerializer().Deserialize<UserRequest>(packets);
+            UserRequest userRequest = null;
+            try
+            {
+                userRequest = new JavaScriptSerializer().Deserialize<UserRequest>(packets);
+            }
+            catch (Exception e)
+            {
+                //recieved an invalid request
+                Console.WriteLine("Invalid request. Construction of userRequest failed: " + e);
+            }
 
-            Console.WriteLine(userRequest.credentials.username);
+            if (world.LoggedIn(userRequest.credentials))
 
             foreach(Request request in userRequest.requests)
             {

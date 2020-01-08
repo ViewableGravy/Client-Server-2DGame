@@ -50,6 +50,13 @@ namespace _2DGameServer
             
         }
 
+        public bool LoggedIn(Credentials credentials)
+        {
+
+
+            return false;
+        }
+
 
     }
 }

@@ -46,14 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="character.cs" />
-    <Compile Include="Credentials.cs" />
+    <Compile Include="RequestDTO\SessionCredentials.cs" />
     <Compile Include="GameLogic.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="ReponseHandler.cs" />
-    <Compile Include="Request.cs" />
+    <Compile Include="RequestDTO\Request.cs" />
     <Compile Include="RequestHandler.cs" />
     <Compile Include="UDPListener.cs" />
-    <Compile Include="UserRequest.cs" />
+    <Compile Include="RequestDTO\UserRequest.cs" />
     <Compile Include="World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _2DGameServer
 {
-    public class Credentials
+    public class Request
     {
-        public String username;
-        public int sessionToken;
+        public int ID;
+        public List<character> keypresses;
     }
 }
