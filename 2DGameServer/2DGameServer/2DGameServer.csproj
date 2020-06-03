@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Extensions" />
@@ -43,22 +46,32 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZeroFormatter, Version=1.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZeroFormatter.1.6.4\lib\net45\ZeroFormatter.dll</HintPath>
+    </Reference>
+    <Reference Include="ZeroFormatter.Interfaces, Version=1.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZeroFormatter.Interfaces.1.6.4\lib\net45\ZeroFormatter.Interfaces.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="character.cs" />
+    <Compile Include="RequestDTO\character.cs" />
     <Compile Include="RequestDTO\SessionCredentials.cs" />
-    <Compile Include="GameLogic.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="ReponseHandler.cs" />
+    <Compile Include="ResponseDTO\ServerClientPacket.cs" />
+    <Compile Include="WorldObjects\Player\Modifications.cs" />
+    <Compile Include="WorldObjects\Player\Player.cs" />
+    <Compile Include="ResponseDTO\ReponseHandler.cs" />
     <Compile Include="RequestDTO\Request.cs" />
-    <Compile Include="RequestHandler.cs" />
+    <Compile Include="RequestDTO\RequestHandler.cs" />
     <Compile Include="UDPListener.cs" />
     <Compile Include="RequestDTO\UserRequest.cs" />
+    <Compile Include="WorldObjects\Player\UpdateManager.cs" />
     <Compile Include="World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorldObjects\WorldObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

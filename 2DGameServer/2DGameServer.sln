@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2DGameServer", "2DGameServer\2DGameServer.csproj", "{DAAB0489-E99A-4D89-AA52-C3CA84E08DFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerUnitTests", "ServerUnitTests\ServerUnitTests.csproj", "{8F89DE0F-82EC-4FA7-AE72-36A27824AEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testingConcepts", "testingConcepts\testingConcepts.csproj", "{4422DDD6-678D-4576-AB3B-F7B636DE8914}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DAAB0489-E99A-4D89-AA52-C3CA84E08DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAAB0489-E99A-4D89-AA52-C3CA84E08DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAAB0489-E99A-4D89-AA52-C3CA84E08DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F89DE0F-82EC-4FA7-AE72-36A27824AEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F89DE0F-82EC-4FA7-AE72-36A27824AEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F89DE0F-82EC-4FA7-AE72-36A27824AEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F89DE0F-82EC-4FA7-AE72-36A27824AEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4422DDD6-678D-4576-AB3B-F7B636DE8914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4422DDD6-678D-4576-AB3B-F7B636DE8914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4422DDD6-678D-4576-AB3B-F7B636DE8914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4422DDD6-678D-4576-AB3B-F7B636DE8914}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

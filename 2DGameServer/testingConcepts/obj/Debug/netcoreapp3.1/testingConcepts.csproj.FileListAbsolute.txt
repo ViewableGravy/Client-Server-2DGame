@@ -1,0 +1,11 @@
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.deps.json
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.runtimeconfig.json
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.runtimeconfig.dev.json
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\bin\Debug\netcoreapp3.1\testingConcepts.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\obj\Debug\netcoreapp3.1\testingConcepts.csprojAssemblyReference.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\obj\Debug\netcoreapp3.1\testingConcepts.AssemblyInfoInputs.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\obj\Debug\netcoreapp3.1\testingConcepts.AssemblyInfo.cs
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\obj\Debug\netcoreapp3.1\testingConcepts.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\testingConcepts\obj\Debug\netcoreapp3.1\testingConcepts.pdb

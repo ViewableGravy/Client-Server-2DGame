@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
-using System.IO;
+using System.Text;
 using System.Threading;
 
 namespace _2DGameServer
@@ -16,14 +15,13 @@ namespace _2DGameServer
 
         private const int PORT = 1234;
         private volatile bool isListening;
-        Queue<string> requests;
+        private ConcurrentQueue<UserRequest> queue = new ConcurrentQueue<UserRequest>();
 
         Thread listeningThread;
 
 
-        public UDPListener(ref Queue<string> requests)
+        public UDPListener()
         {
-            this.requests = requests;
             this.isListening = false;
         }
 
@@ -37,7 +35,7 @@ namespace _2DGameServer
             }
         }
 
-        public void ListenForUDPPackages()
+        private void ListenForUDPPackages()
         {
             UdpClient listener = null;
             try
@@ -57,9 +55,12 @@ namespace _2DGameServer
                 {
                     while (this.isListening)
                     {
-                        //Console.WriteLine("Waiting for UDP broadcast to port " + PORT);
+                        //Consider changing requests to sort incoming messages by time sent rather than time arrived
                         byte[] bytes = listener.Receive(ref groupEP);
-                        requests.Enqueue(Encoding.ASCII.GetString(bytes, 0, bytes.Length));
+                        ThreadPool.QueueUserWorkItem(_ =>
+                        {
+                            queue.Enqueue(JsonConvert.DeserializeObject<UserRequest>(Encoding.ASCII.GetString(bytes, 0, bytes.Length)));
+                        });
                     }
                 }
                 catch (Exception e)
@@ -72,6 +73,13 @@ namespace _2DGameServer
                     Console.WriteLine("Done listening for UDP broadcast");
                 }
             }
+        }
+
+        public Queue<UserRequest> GetQueueClone()
+        {
+            var newQueue = new Queue<UserRequest>();
+            while (queue.TryDequeue(out var temp)) newQueue.Enqueue(temp);
+            return newQueue;
         }
 
         public void StopListener()

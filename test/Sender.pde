@@ -1,13 +1,12 @@
+ArrayList<Packet> sentPackets = new ArrayList<Packet>();
+
 class Sender implements Runnable {
-   ArrayList<Character> newInputs;
-   ArrayList<Integer> availablePacketID = new ArrayList<Integer>();
-   ArrayList<Packet> sentPackets = new ArrayList<Packet>();
+  ArrayList<Character> newInputs;
+  int availablePacketID;
 
   Sender(ArrayList<Character> newInputs) {
     this.newInputs = newInputs;
-    for (int i = 1; i <= 1000; ++i) {
-      availablePacketID.add(i);
-    }
+    availablePacketID = 1;
   }
 
   void run() {
@@ -15,14 +14,12 @@ class Sender implements Runnable {
       try {
 
         //generate packet from current inputs
-        Packet currentPacket = new Packet(availablePacketID.get(0), newInputs);
-
-        availablePacketID.remove(0);
+        Packet currentPacket = new Packet(availablePacketID++, newInputs);
 
         //generate packet to send to server including previous packets
         String request = GenerateRequest(currentPacket, sentPackets);
 
-        println(request);
+        //println(request);
         //send to server
         ServerUpdate(request);
 
@@ -30,7 +27,7 @@ class Sender implements Runnable {
         sentPackets.add(currentPacket);
 
         //wait before trying again
-        Thread.sleep(1000);
+        Thread.sleep(10);
       } 
       catch(Exception e) {
         println(e);
@@ -65,17 +62,16 @@ public static String GenerateRequest(Packet currentPacket, ArrayList<Packet> sen
 
 public static JSONObject ConstructRequest(Packet pkt) {
   JSONObject internalPacket = new JSONObject();
-    internalPacket.setInt("ID", pkt.ID);
+  internalPacket.setInt("ID", pkt.ID);
 
-    JSONArray keys = new JSONArray();
-    for (int i = 0; i < pkt.keyPresses.size(); i++) {
-      JSONObject KEY = new JSONObject();
-      KEY.setString("value", String.valueOf(pkt.keyPresses.get(i)));
-      keys.setJSONObject(i, KEY);
-      
-    }
-    internalPacket.setJSONArray("keypresses", keys);
-    return internalPacket;
+  JSONArray keys = new JSONArray();
+  for (int i = 0; i < pkt.keyPresses.size(); i++) {
+    JSONObject KEY = new JSONObject();
+    KEY.setString("value", String.valueOf(pkt.keyPresses.get(i)));
+    keys.setJSONObject(i, KEY);
+  }
+  internalPacket.setJSONArray("keypresses", keys);
+  return internalPacket;
 }
 
 public static void ServerUpdate(String request) throws IOException {
@@ -88,4 +84,49 @@ public static void ServerUpdate(String request) throws IOException {
   socket.send(new DatagramPacket(buf, buf.length, DESTINATION_IP, PORT)); //send to server
 
   socket.close();
+}
+
+public class Reciever implements Runnable {
+  ArrayList<String> serverMessage;
+  public Reciever(ArrayList<String> serverMessage) {
+    this.serverMessage = serverMessage;
+  }
+
+  public void run() {
+    DatagramSocket datagramSocket;
+    try {
+      datagramSocket = new DatagramSocket(1011);
+
+      //probably enough bytes for now
+      byte[] buffer = new byte[30000];
+      DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+
+      while (true) {
+        println("ready to recieve");
+        datagramSocket.receive(packet);
+        println(new String(buffer));
+        serverMessage.add(new String(buffer));
+        ApplyServerMessage();
+      }
+    } 
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  
+  private void ApplyServerMessage() {
+    for(String str : serverMessage) { //<>//
+      JSONObject json = JSONObject.parse(str);
+      int requestNumber = Integer.parseInt(json.get("mostRecentRequest").toString());
+      for(int i = sentPackets.size() - 1; i >= 0; --i) {
+        if(sentPackets.get(i).ID <= requestNumber)
+          sentPackets.remove(sentPackets.get(i));
+      }
+      println(requestNumber);
+      println(sentPackets.size());
+    }
+    serverMessage.clear();
+  }
+  
+  
 }

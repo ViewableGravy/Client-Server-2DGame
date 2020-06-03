@@ -1,5 +1,5 @@
 public class Packet {
-  int ID;
+  public int ID;
   ArrayList<Character> keyPresses;
 
   Packet(int ID, ArrayList<Character> keyPresses) {

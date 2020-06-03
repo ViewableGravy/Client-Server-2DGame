@@ -14,6 +14,10 @@ C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameSer
 C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.exe
 C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\2DGameServer.pdb
 C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csprojAssemblyReference.cache
-C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csproj.CoreCompileInputs.cache
 C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.exe
 C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Debug\2DGameServer.csproj.CopyComplete
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\ZeroFormatter.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Debug\ZeroFormatter.Interfaces.dll

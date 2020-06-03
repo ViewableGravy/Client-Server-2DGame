@@ -1,0 +1,16 @@
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\ServerUnitTests.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\ServerUnitTests.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\2DGameServer.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\2DGameServer.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\2DGameServer.exe.config
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\obj\Debug\ServerUnitTests.csprojAssemblyReference.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\obj\Debug\ServerUnitTests.csproj.CopyComplete
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\obj\Debug\ServerUnitTests.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\ServerUnitTests\obj\Debug\ServerUnitTests.pdb

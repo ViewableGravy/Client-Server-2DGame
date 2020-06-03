@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Diagnostics;
 using System.Net;
-using System.Net.Sockets;
-using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace _2DGameServer
 {
 
     public class World
     {
-        
-        private List<Player> onlineUsers = new List<Player>();
-        private GameLogic logic;
+
+        public List<Player> onlineUsers = new List<Player>();
         private UDPListener listener;
-        public Queue<string> requests = new Queue<string>();
+        private ResponseHandler responseHandler = new ResponseHandler();
+        private RequestHandler requestHandler;
+
 
         EventHandler eventManager;
         //WorldObjectFactory woFactory;
@@ -29,25 +29,69 @@ namespace _2DGameServer
 
             World world = new World();
 
-            world.logic = new GameLogic(ref world.requests, ref world);
-            world.listener = new UDPListener(ref world.requests);
+            world.requestHandler = new RequestHandler(ref world);
+            world.listener = new UDPListener();
             world.listener.StartListener();
 
-            world.onlineUsers.Add(new Player(new SessionCredentials("7c9e6679-7425-40de-944b-e07fc1f90ae7", "ViewableGravy", "Test"), null));
+            world.onlineUsers.Add(new Player(new SessionCredentials("7c9e6679-7425-40de-944b-e07fc1f90ae7",
+                                                                    "ViewableGravy",
+                                                                    "Test"), Dns.GetHostByName(Dns.GetHostName()).AddressList[0], world, 0));
+            world.onlineUsers[0].updateManager.alreadyExist.Add(new WorldObject());
+            //note: this is a test player, when the client originally logs in, the UUID and Ipaddress of the user will be send
+            //with their login credentials
 
-            const int MILLIS = 5000;
-            //Update server every MILLIS
-            while (true) 
+            //const int MILLIS = 1000;
+            const int MILLIS = 1000;
+            while (true)
             {
-                Console.WriteLine("Executing Game logic after {0} milliseconds", MILLIS);
-                world.logic.execute();
-                System.Threading.Thread.Sleep(MILLIS); 
+                ThreadPool.QueueUserWorkItem(foo =>
+                {
+                    Console.WriteLine("New: ");
+
+                    // console.writeline literally takes ages (1ms);
+                    world.TestExecutionTime(true, () =>
+                    {
+                        var userRequests = world.listener.GetQueueClone();
+
+                        while (userRequests.Count != 0)
+                            world.requestHandler.HandleRequest(userRequests.Dequeue());
+                    });
+
+
+                    //update the world
+                    //world.Update()
+
+                    //Update Client for each user
+                    ThreadPool.QueueUserWorkItem(_ => world.UpdateClients());
+                });
+                Thread.Sleep(MILLIS);
             }
         }
 
-        public Player GetPlayer(string username)
+        public void TestExecutionTime(bool run, Action method)
         {
-            foreach(Player plr in onlineUsers)
+            var stopwatch = Stopwatch.StartNew();
+
+            method();
+
+            stopwatch.Stop();
+
+            if (run)
+            {
+                Console.WriteLine("test execution on method. ms: {0}, mms: {1}",
+                    (int)stopwatch.Elapsed.TotalMilliseconds,
+                    (int)((stopwatch.Elapsed.TotalMilliseconds - ((int)stopwatch.Elapsed.TotalMilliseconds)) * 1000));
+            }
+        }
+
+        public void UpdateClients()
+        {
+            Parallel.ForEach(onlineUsers, player => responseHandler.UpdateClient(player));
+        }
+
+        public Player GetUser(string username)
+        {
+            foreach (Player plr in onlineUsers)
                 if (plr.credentials.username == username)
                     return plr;
             return null;
@@ -55,12 +99,10 @@ namespace _2DGameServer
 
         public bool ValidateUser(SessionCredentials credentials)
         {
-            foreach (Player plr in onlineUsers)
+            return onlineUsers.Exists(player =>
             {
-                if (plr.credentials.username == credentials.username)
-                    return plr.credentials.SessionToken == credentials.SessionToken;
-            }
-            return false;
+                return player.credentials.username == credentials.username && player.credentials.SessionToken == credentials.SessionToken;
+            });
         }
 
 

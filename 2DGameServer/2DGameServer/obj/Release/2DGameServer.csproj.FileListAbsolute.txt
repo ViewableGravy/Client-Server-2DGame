@@ -1,0 +1,11 @@
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\2DGameServer.exe.config
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\2DGameServer.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\2DGameServer.pdb
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\Newtonsoft.Json.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\ZeroFormatter.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\ZeroFormatter.Interfaces.dll
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\bin\Release\Newtonsoft.Json.xml
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Release\2DGameServer.csprojAssemblyReference.cache
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Release\2DGameServer.csproj.CopyComplete
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Release\2DGameServer.exe
+C:\Users\lleyt\Desktop\Coding\GitHub\Client-Server-2DGame\2DGameServer\2DGameServer\obj\Release\2DGameServer.pdb
